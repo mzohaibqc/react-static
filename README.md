@@ -19,3 +19,26 @@ npm run build
 
 The `dist` folder will contain the output of the build.
 
+Directory structure:
+
+```
+project
+│   README.md
+│   package.json 
+|   firebase.json
+|   .firebaserc
+|   webpack.config.json
+|   .gitignore
+|   LICENCE 
+│
+|___src
+|   │   |   components
+|   |   |   |   Layout.js
+|   |   |   |   About.js
+|   |   |   |   Contacts.js
+|   
+|___dist
+|   |   index.html
+|   |   bundle.js
+|   |   style.css
+```

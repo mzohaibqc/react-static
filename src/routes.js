@@ -3,13 +3,15 @@ import { Router, Route, IndexRoute, RouteHandler } from 'react-router';
 import HomePage from './pages/Home';
 import AboutPage from './pages/About';
 import NotFoundPage from './pages/NotFound';
-import Layout from './containers/Layout';
+import Layout from './components/Layout';
+import About from './components/About';
+import Contacts from './components/Contacts';
 
 const routes = (
   <Router>
     <Route path="/" component={Layout}>
-      <IndexRoute component={HomePage}/>
-      <Route path="about" component={AboutPage}/>
+      <IndexRoute component={About}/>
+      <Route path="contacts" component={Contacts}/>
     </Route>
     <Route path="*" component={NotFoundPage}/>
   </Router>
