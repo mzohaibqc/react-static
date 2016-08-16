@@ -24,6 +24,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "i": "^0.3.5",
+    "material-design-iconic-font": "^2.2.0",
     "materialize-css": "^0.97.7",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",

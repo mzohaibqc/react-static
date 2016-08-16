@@ -8,8 +8,14 @@ const paths = ['/', '/about', '/contacts', '/404.html'];
 
 module.exports = {
   entry: {
+    // js entry point
     main: './src/index.js',
-    css: [`${__dirname}/src/styles.css`, `${__dirname}/node_modules/materialize-css/dist/css/materialize.min.css`]
+    // add you css files' paths here.
+    css: [
+      `${__dirname}/src/styles.css`,
+      `${__dirname}/node_modules/materialize-css/dist/css/materialize.min.css`,
+      `${__dirname}/node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.min.css`
+      ]
   },
   output: {
     filename: 'bundle.js',
@@ -26,6 +32,7 @@ module.exports = {
   module: {
     loaders: [
       {
+        // match all js or jsx files except from `node_modules` folder
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
@@ -36,6 +43,7 @@ module.exports = {
         test: /\.css/,
         include: [
           path.resolve(__dirname, './node_modules/materialize-css/dist/css'),
+          path.resolve(__dirname, './node_modules/material-design-iconic-font/dist/css/material-design-iconic-font.min.css'),
           path.resolve(__dirname, './src/styles.css')
           ],
         loader: ExtractTextPlugin.extract(
@@ -44,12 +52,12 @@ module.exports = {
         )
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'url-loader?limit=10000',
       },
       {
-        test: /\.(eot|ttf|wav|mp3)$/,
-        loader: 'file-loader',
+        test   : /\.(mp3|wav|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader : 'file-loader'
       }
     ]
   },
