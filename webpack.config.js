@@ -4,7 +4,7 @@ const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin'
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const locals = {};
-const paths = ['/', '/about', '/contacts', '/404.html'];
+const paths = ['/', '/about', '/contacts', '*'];
 
 module.exports = {
   entry: {
@@ -39,6 +39,7 @@ module.exports = {
         query: { presets: ['es2015', 'react'] }
       },
       { test: /\.ejs$/, loader: "ejs-loader" },
+   
       {
         test: /\.css/,
         include: [
@@ -53,11 +54,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,
-        loader: 'url-loader?limit=10000',
+        loader: 'url-loader?limit=10000&name=[name].[ext]',
       },
       {
         test   : /\.(mp3|wav|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        loader : 'file-loader'
+        loader : 'file-loader?name=[name].[ext]'
       }
     ]
   },

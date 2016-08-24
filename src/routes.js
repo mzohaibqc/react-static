@@ -1,8 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute, RouteHandler } from 'react-router';
-import HomePage from './pages/Home';
-import AboutPage from './pages/About';
-import NotFoundPage from './pages/NotFound';
+
+import NotFoundPage from './components/NotFound';
 import Layout from './components/Layout';
 import About from './components/About';
 import Contacts from './components/Contacts';

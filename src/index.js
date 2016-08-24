@@ -5,7 +5,7 @@ import { Router, RouterContext, match, browserHistory, createMemoryHistory } fro
  
 import routes from './routes';
 import template from './template.ejs';
-
+import image from './images/user.png'
 // Client rendering 
 if (typeof document !== 'undefined') {
   render(<Router history={browserHistory} routes={routes} />, document.getElementById('app'));
@@ -15,8 +15,9 @@ if (typeof document !== 'undefined') {
 export default (locals, callback) => {
   const history = createMemoryHistory();
   const location = history.createLocation(locals.path);
- 
+ console.log(locals);
   match({ routes, location }, (error, redirectLocation, renderProps) => {
+    
     callback(null, template({
       html: renderToString(<RouterContext {...renderProps} />),
       assets: locals.assets

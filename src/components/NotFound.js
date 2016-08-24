@@ -2,6 +2,8 @@ import React from 'react';
 
 export default class NotFoundPage extends React.Component {
   render() {
-    return <h1>Not Found :(</h1>;
+    return <div>
+      <img src="/404.png" />
+    </div>;
   }
 }
